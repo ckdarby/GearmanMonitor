@@ -12,6 +12,7 @@
         }
     ],
     "require": {
+        "publero/net_gearman": "1.0.*@dev",
         "php": ">=5.4",
         "silex/silex": "1.*",
         "symfony/config": "~2.4",
