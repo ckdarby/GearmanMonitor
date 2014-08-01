@@ -1,4 +1,4 @@
 servers:
     default:
-        address: 127.0.0.1
-        port: 4730
+        name: "Default Gearman"
+        address: "127.0.0.1:4730"
