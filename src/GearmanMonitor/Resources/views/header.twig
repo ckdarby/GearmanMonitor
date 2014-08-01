@@ -2,8 +2,8 @@
     <head>
         <meta charset="utf-8">
         <title>Gearman Monitor</title>
-        <link href="web/css/bootstrap.min.css" rel="stylesheet">
-        <link href="web/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="{{ app.request.basepath }}/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ app.request.basepath }}/assets/css/bootstrap-theme.min.css" rel="stylesheet">
     </head>
     <body role="document">
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -19,7 +19,7 @@
                 </div>
                 <div class="navbar-collapse collapse pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Servers</a></li>
+                        <li><a href="{{ app.request.basepath }}/servers">Servers</a></li>
                         <li><a href="#">Queue</a></li>
                         <li><a href="#">Workers</a></li>
                     </ul>
