@@ -1,0 +1,29 @@
+{% include 'header.twig' %}
+
+<div class="container" role="main">
+    <div class="panel panel-default">
+        <div class="panel-heading">Gearman Servers</div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Server</th>
+                        <th>Address</th>
+                        <th>Version</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for server in servers %}
+                    <tr>
+                        <td>{{ server.name }}</td>
+                        <td>{{ server.address }}</td>
+                        <td>{{ server.version }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.twig' %}

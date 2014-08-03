@@ -16,11 +16,15 @@ class ServerController
             [
                 'address' => '127.0.0.1',
                 'name' => 'KAPPA'
+            ],
+            [
+                'address' => '192.168.155.1',
+                'name' => 'CHARMANDER'
             ]
         ];
         $servers = $this->serverService->getStatuses($servers);
-        return $this->twig->render('main.twig', [
-            $servers
+        return $this->twig->render('server.twig', [
+            'servers' => $servers
         ]);
     }
 }

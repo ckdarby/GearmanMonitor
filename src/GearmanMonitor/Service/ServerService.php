@@ -17,7 +17,7 @@ class ServerService
             try {
                 $germanManager = new Manager($server['address']);
                 $server['version'] = $germanManager->version();
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $server['version'] = 'None';
             }
         }
