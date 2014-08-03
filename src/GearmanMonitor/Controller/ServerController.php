@@ -4,6 +4,8 @@ namespace GearmanMonitor\Controller;
 class ServerController
 {
 
+    public $serverService;
+
     public function __construct($twig, $serverService)
     {
         $this->serverService = $serverService;
