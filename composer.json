@@ -1,8 +1,8 @@
 {
     "name": "ckdarbyinc/gearman-monitor",
-    "description": "Simplist Monitor for Gearman ",
-    "homepage": "http://bolt.cm",
-    "keywords": ["German", "PHP", "Monitor"],
+    "description": "Monitor for Gearman ",
+    "homepage": "https://os.ckdarby.com/GearmanMonitor",
+    "keywords": ["Gearman", "PHP", "Monitor"],
     "license": "MIT",
     "authors": [
         {
@@ -12,11 +12,10 @@
         }
     ],
     "require": {
-        "publero/net_gearman": "1.0.*@dev",
         "php": ">=5.4",
+        "publero/net_gearman": "1.0.*@dev",
         "silex/silex": "1.*",
-        "symfony/config": "~2.4",
-        "symfony/console": "~2.4",
+        "igorw/config-service-provider": "1.2.2",
         "symfony/locale": "~2.4",
         "symfony/translation": "~2.4",
         "symfony/twig-bridge": "~2.4",
