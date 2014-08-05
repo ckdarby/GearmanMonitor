@@ -5,6 +5,8 @@ class ServerController
 {
 
     public $serverService;
+    public $twig;
+    public $servers;
 
     public function __construct($app)
     {
