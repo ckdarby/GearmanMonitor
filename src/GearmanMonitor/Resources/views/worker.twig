@@ -1,0 +1,41 @@
+{% include 'header.twig' %}
+
+<div class="container" role="main">
+    <div class="panel panel-default">
+        <div class="panel-heading">Gearman Workers</div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Server</th>
+                        <th>IP</th>
+                        <th>Functions</th>
+                        <th>Descriptor</th>
+                        <th>Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for server in servers %}
+                        {% for worker in server.workers %}
+                        <tr>
+                            <td>{{ server.name }}</td>
+                            <td>{{ worker.ip }}</td>
+                            <td>
+                                <ul>
+                                {% for ability in worker.abilities %}
+                                    <li>{{ ability }}</li>
+                                {% endfor %}
+                                </ul>
+                            </td>
+                            <td>{{ worker.fd }}</td>
+                            <td>{{ worker.id }}</td>
+                        </tr>
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.twig' %}

@@ -4,16 +4,22 @@ namespace GearmanMonitor\Controller;
 class WorkerController
 {
 
-    public $WorkerService;
+    public $workerService;
+    public $twig;
+    public $servers;
 
-    public function __construct($twig, $WorkerService)
+    public function __construct($app)
     {
-        $this->WorkerService = $WorkerService;
-        $this->twig = $twig;
+        $this->workerService = $app['worker.service'];
+        $this->twig = $app['twig'];
+        $this->servers = $app['config.GearmanMonitor']['servers'];
     }
 
     public function indexAction()
     {
-        return [];
+        $servers = $this->workerService->getWorkers($this->servers);
+        return $this->twig->render('worker.twig', [
+            'servers' => $servers
+        ]);
     }
 }
