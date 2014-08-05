@@ -7,14 +7,14 @@ $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../src/GearmanMonitor/Resources/views',
 ));
-
+$app->register(new Igorw\Silex\ConfigServiceProvider(__DIR__.'/../src/GearmanMonitor/Resources/config/config.yml'));
 
 //Server
 $app['server.service'] = $app->share(function() {
     return new GearmanMonitor\Service\ServerService;
 });
 $app['server.controller'] = $app->share(function() use ($app) {
-    return new ServerController($app['twig'], $app['server.service']);
+    return new ServerController($app);
 });
 
 //Queue
@@ -22,7 +22,7 @@ $app['queue.service'] = $app->share(function() {
     return new GearmanMonitor\Service\QueueService;
 });
 $app['queue.controller'] = $app->share(function() use ($app) {
-    return new QueueController($app['twig'], $app['queue.service']);
+    return new QueueController($app);
 });
 
 //Worker
@@ -30,7 +30,7 @@ $app['worker.service'] = $app->share(function() {
     return new GearmanMonitor\Service\workerService;
 });
 $app['worker.controller'] = $app->share(function() use ($app) {
-    return new workerController($app['twig'], $app['worker.service']);
+    return new workerController($app);
 });
 
 $app->get('/', "server.controller:indexAction");

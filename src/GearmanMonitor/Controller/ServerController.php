@@ -6,25 +6,16 @@ class ServerController
 
     public $serverService;
 
-    public function __construct($twig, $serverService)
+    public function __construct($app)
     {
-        $this->serverService = $serverService;
-        $this->twig = $twig;
+        $this->serverService = $app['server.service'];
+        $this->twig = $app['twig'];
+        $this->servers = $app['config.GearmanMonitor']['servers'];
     }
 
     public function indexAction()
     {
-        $servers = [
-            [
-                'address' => '127.0.0.1',
-                'name' => 'KAPPA'
-            ],
-            [
-                'address' => '192.168.155.1',
-                'name' => 'CHARMANDER'
-            ]
-        ];
-        $servers = $this->serverService->getStatuses($servers);
+        $servers = $this->serverService->getStatuses($this->servers);
         return $this->twig->render('server.twig', [
             'servers' => $servers
         ]);
