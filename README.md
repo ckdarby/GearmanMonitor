@@ -1,2 +1,2 @@
-gearman-monitor
+Gearman Monitor
 ===============
