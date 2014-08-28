@@ -1,4 +1,5 @@
-servers:
-    default:
-        name: "Default Gearman"
-        address: "127.0.0.1:4730"
+config.GearmanMonitor:
+    servers:
+        default:
+            name: "Default Gearman"
+            address: "127.0.0.1:4730"
