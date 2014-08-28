@@ -4,13 +4,13 @@ use Net\Gearman\Manager;
 
 class ServerService
 {
-    public $servers;
 
-    public function __construct()
-    {
-
-    }
-
+    /**
+     * Given a list of servers gets the versions if possible
+     *
+     * @param array Server addresses
+     * @return array Servers with appended version info
+     */
     public function getStatuses($servers)
     {
         foreach($servers as &$server){
@@ -18,6 +18,7 @@ class ServerService
                 $germanManager = new Manager($server['address']);
                 $server['version'] = $germanManager->version();
             } catch (\Exception $e) {
+                //Unable to connect to server
                 $server['version'] = 'None';
             }
         }
