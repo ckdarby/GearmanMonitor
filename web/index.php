@@ -46,5 +46,5 @@ try {
 $app->run();
 
 } catch (Exception $e) {
-    $e->getMessage();
+    echo $e->getMessage();
 }
