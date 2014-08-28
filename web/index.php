@@ -43,7 +43,7 @@ try {
     $app->get('/queue', "queue.controller:indexAction");
     $app->get('/worker', "worker.controller:indexAction");
 
-$app->run();
+    $app->run();
 
 } catch (Exception $e) {
     echo $e->getMessage();
