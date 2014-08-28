@@ -1,0 +1,37 @@
+{% include 'header.twig' %}
+
+<div class="container" role="main">
+    <div class="panel panel-default">
+        <div class="panel-heading">Gearman Queue</div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Server</th>
+                        <th>IP</th>
+                        <th>Function</th>
+                        <th>Jobs in Queue</th>
+                        <th>Jobs Running</th>
+                        <th>Workers Registered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for server in servers %}
+                        {% for function ,queue in server.queue %}
+                        <tr>
+                            <td>{{ server.name }}</td>
+                            <td>{{ server.address }}</td>
+                            <td>{{ function }}</td>
+                            <td>{{ queue.in_queue }}</td>
+                            <td>{{ queue.jobs_running }}</td>
+                            <td>{{ queue.capable_workers }}</td>
+                        </tr>
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.twig' %}
