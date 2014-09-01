@@ -1,5 +1,5 @@
 {
-    "name": "ckdarbyinc/gearman-monitor",
+    "name": "ckdarbyinc/GearmanMonitor",
     "description": "Monitor for Gearman ",
     "homepage": "https://os.ckdarby.com/GearmanMonitor",
     "keywords": ["Gearman", "PHP", "Monitor"],
