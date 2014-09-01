@@ -4,6 +4,10 @@ Gearman Monitor
 Gearman Monitor provides a dashboard to show gearman servers, queues and workers.
 
 ![Gearman Monitor Screenshot](http://i.imgur.com/X8H07HD.png "Gearman Monitor Screenshot")
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7674e20... Move inspired to credits & add screenshot
 
 ## Installation
 The following instructions outline installation using Composer. If you don't
@@ -30,4 +34,8 @@ config.GearmanMonitor:
 ```
 
 ##Credits
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7674e20... Move inspired to credits & add screenshot
 Inspired by [yugene/Gearman-Monitor](https://github.com/yugene/Gearman-Monitor).
